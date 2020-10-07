@@ -6,9 +6,9 @@ services:
       context: .
     volumes: &runtime_volumes
       - ./app:/app
-  test-async:
+  test-container-time:
     image: container-tests:${TAG:-latest}
     command:
       - "python3"
-      - "/app/test_datetime_issue.py"
+      - "/app/test_container_time.py"
     volumes: *runtime_volumes
