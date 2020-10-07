@@ -9,6 +9,6 @@ services:
   test-container-time:
     image: container-tests:${TAG:-latest}
     command:
-      - "python3"
+      - "python"
       - "/app/test_container_time.py"
     volumes: *runtime_volumes
