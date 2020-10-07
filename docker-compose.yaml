@@ -1,0 +1,14 @@
+version: "3.9"
+services:
+  container-tests:
+    image: container-tests:${TAG:-latest}
+    build:
+      context: .
+    volumes: &runtime_volumes
+      - ./app:/app
+  test-async:
+    image: container-tests:${TAG:-latest}
+    command:
+      - "python3"
+      - "/app/test_datetime_issue.py"
+    volumes: *runtime_volumes
